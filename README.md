@@ -1,6 +1,6 @@
-\[!\[Open in MATLAB Online]
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=marcoca712-gif/MSFPractica4)
 
-# Práctica: Sistema cardiovascular
+# Práctica: Sistema Endocrino
 
 ## Información del estudiante
 
@@ -24,22 +24,30 @@ La asignatura de Modelado de Sistemas Fisiológicos forma parte del plan de estu
 
 ## Objetivos
 
-1\. Calcular la función de transferencia.
-2. Determinar el modelo de ecuaciones integro-diferenciales.
-3. Calcular el error en estado estacionario y la estabilidad en lazo abierto.
-4. Emular y simular la respuesta del circuito en Simulink/Simscape a la señal "Uniform Random Number" con la siguiente configuración: min = -0.2 V; max = 1 V; seed = 106; Sample time = 0.5.
-5. Sintonizar las ganancias de un controlador PID para eliminar el error entre la entrada y la salida del sistema normotenso-hipotenso y normotenso-hipertenso.
-6. Obtener la respuesta en lazo abierto y en lazo cerrado con el controlador PID en Spyder/Python con la función de transferencia.
+1.Dibujar el diagrama elÈctrico del sistema endocrino, identiÖcando cada uno de sus elementos, es decir,
+componentes, voltajes, corrientes y nodos de entrada y salida. 
+2. (Determine el modelo de ecuaciones integro-diferenciales.
+3. Calcule la funciÛn de transferencia del sistema.
+4. Calcule el error en estado estacionario.
+5. Ilustre la respuesta en lazo abierto del control y del caso a un escalÛn unitario de entrada en Python
+o Simulink.
+6. DiseÒe un controlador en lazo cerrado, con base en el siguiente diagrama, que permita eliminar el
+error en la respuesta del caso
 
 ## Descripción detallada del sistema
+El sistema endócrino regula funciones fisiológicas mediante la liberación de hormonas en el torrente sanguíneo, las cuales viajan a órganos diana (u órganos blancos) para inducir respuestas específicas. Esta dinámica puede representarse de forma simplificada mediante un circuito eléctrico de segundo orden, modelando los procesos de secreción, transporte y respuesta hormonal bajo las siguientes suposiciones:
 
-El modelo de Windkessel de cuatro elementos contiene dos elementos dinámicos. Por lo tanto, se necesitan dos estados para describir la dinámica. El vector de estados se conforma por las variables FL(t) denotando el flujo a través de la inercia arterial total, y la variable Pp(t) representando la presión sobre la distensibilidad arterial. Entonces, asumiendo Pa(t) como la presión arterial de entrada, y en consecuencia a Fa(t) como el flujo hacia la aorta o arteria pulmonar. Los parámetros son Z, C, R y L, que representan respectivamente la impedancia característica del lecho vascular pulmonar (aorta y arteria pulmonar), la distensibilidad aérea total, la resistencia periférica y la inertancia arterial. Este modelo tiene muchas ventajas importantes, por ejemplo:
+La secreción hormonal desde una glándula (como la hipófisis o el hipotálamo) se modela mediante una fuente de voltaje de entrada V_e(t), que representa un estímulo inicial al sistema (por ejemplo, una señal homeostática o neural).
 
-1\. Su sencillez, unos pocos elementos interconectados son suficientes para reproducir la dinámica principal del sistema cardiovascular.
+El proceso de liberación y difusión hormonal en el torrente sanguíneo se modela con una resistencia R_1, asociada al retraso y pérdida de señal hormonal durante su transporte.
 
-2\. Existe una clara analogía entre los elementos eléctricos y los componentes hidráulicos implicados en el efecto Windkessel. En consecuencia, se relacionan fácilmente con el significado hemodinámico y el acoplamiento ventrículo-arterial.
+El almacenamiento o acumulación temporal de hormonas (por ejemplo, en tejidos o compartimentos intermedios) se representa con un capacitor C, que regula la disponibilidad hormonal en el tiempo.
 
-Palabras clave: ???; ???; ???; ???; ???
+La respuesta del órgano diana (como la glándula suprarrenal o la tiroides) se modela mediante una segunda rama con una resistencia R_2 y una inductancia L representando la resistencia al cambio hormonal en el tejido y la inercia de respuesta biológica, respectivamente.
+
+Se identifican los siguientes dos flujos en el sistema: el flujo de la secreción hormonal F_e(t) y el flujo de la absorción hormonal en el órgano diana F_s(t).
+
+Palabras clave: Funciones fisiologicas; Difusion hormonal; Flujo Fs (t); Torrente Sanguineo;
 
 ## Lista de archivos incluidos en el repositorio
 
